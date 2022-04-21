@@ -1,0 +1,2411 @@
+{
+	"info": {
+		"_postman_id": "1c8d4637-6fc2-46ae-ac44-42619bf81cb2",
+		"name": "SASE Production API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Identity Services",
+			"item": [
+				{
+					"name": "List all authentication portals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/authentication-portals?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"authentication-portals"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						},
+						"description": "Retrieve a list of all authentication portals"
+					},
+					"response": []
+				},
+				{
+					"name": "Create an authentication portal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"authentication_profile\": \"string\",\n\"certificate_profile\": \"string\",\n\"gp_udp_port\": 1,\n\"idle_timer\": 1,\n\"redirect_host\": \"string\",\n\"tls_service_profile\": \"string\",\n\"timer\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/authentication-portals?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"authentication-portals"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						},
+						"description": "Create an authentication portal."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit an authentication portal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"authentication_profile\": \"string\",\n\"certificate_profile\": \"string\",\n\"gp_udp_port\": 1,\n\"idle_timer\": 1,\n\"redirect_host\": \"string\",\n\"tls_service_profile\": \"string\",\n\"timer\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/authentication-portals?folder=Shared&id={{uuid}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"authentication-portals"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								},
+								{
+									"key": "id",
+									"value": "{{uuid}}"
+								}
+							]
+						},
+						"description": "Edit an authentication portal."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an authentication portal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/authentication-portals?id={{uuid}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"authentication-portals"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{uuid}}"
+								}
+							]
+						},
+						"description": "Delete an authentication portal."
+					},
+					"response": []
+				},
+				{
+					"name": "List all authentication profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/authentication-profiles?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"authentication-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all authentication rules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/authentication-rules?folder=Shared&position=pre",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"authentication-rules"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								},
+								{
+									"key": "position",
+									"value": "pre"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all authentication sequence",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/authentication-sequences?folder=Mobile Users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"authentication-sequences"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Mobile Users"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all Kerberos server profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/kerberos-server-profiles?folder=Mobile Users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"kerberos-server-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Mobile Users"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all LDAP server profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ldap-server-profiles?folder=Mobile Users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ldap-server-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Mobile Users"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all local users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/local-users?folder=Mobile Users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"local-users"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Mobile Users"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all MFA servers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/mfa-servers?folder=Mobile Users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"mfa-servers"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Mobile Users"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all Radius server profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/radius-server-profiles?folder=Mobile Users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"radius-server-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Mobile Users"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all SAML server profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/saml-server-profiles?folder=Mobile Users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"saml-server-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Mobile Users"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all TACACS server profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/tacacs-server-profiles?folder=Mobile Users",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"tacacs-server-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Mobile Users"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Policy Objects",
+			"item": [
+				{
+					"name": "List address groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/address-groups?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"address-groups"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/addresses?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"addresses"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List application filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/application-filters?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"application-filters"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List application groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/application-groups?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"application-groups"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all application override rules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/app-override-rules?position=pre&folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"app-override-rules"
+							],
+							"query": [
+								{
+									"key": "position",
+									"value": "pre"
+								},
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List applications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/applications?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"applications"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List auto tag actions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/auto-tag-actions?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"auto-tag-actions"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List dynamic user groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/dynamic-user-groups?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"dynamic-user-groups"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List external dynamic lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/external-dynamic-lists?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"external-dynamic-lists"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List hip objects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/hip-objects?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"hip-objects"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List hip profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/hip-profiles?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"hip-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List quarantined devices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/quarantined-devices?service_type=Service Connections&connection_name=TBD",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"quarantined-devices"
+							],
+							"query": [
+								{
+									"key": "service_type",
+									"value": "Service Connections"
+								},
+								{
+									"key": "connection_name",
+									"value": "TBD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Regions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/regions?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"regions"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List schedules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/schedules?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"schedules"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List service groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/service-groups?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"service-groups"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/services?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"services"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/tags?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"tags"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List URL categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/url-categories?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"url-categories"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List URL filtering categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/url-filtering-categories?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"url-filtering-categories"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Remote Networks",
+			"item": [
+				{
+					"name": "List aggregated bandwidth regions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/bandwidth-allocations",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"bandwidth-allocations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List IKE crypto profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ike-crypto-profiles?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ike-crypto-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List IKE gateways",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ike-gateways?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ike-gateways"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List IPSec crypto profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ipsec-crypto-profiles?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ipsec-crypto-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List IPSec tunnels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ipsec-tunnels?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ipsec-tunnels"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List licenses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/license-types",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"license-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/locations",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List QoS policy rules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/qos-policy-rules?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"qos-policy-rules"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List QoS profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/qos-profiles?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"qos-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List remote networks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/remote-networks?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"remote-networks"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Security Services",
+			"item": [
+				{
+					"name": "List all anti-spyware profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/anti-spyware-profiles?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"anti-spyware-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all anti-spyware signatures",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/anti-spyware-signatures?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"anti-spyware-signatures"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List DNS security profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/dns-security-profiles?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"dns-security-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List decryption exclusions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/decryption-exclusions?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"decryption-exclusions"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List decryption profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/decryption-profiles?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"decryption-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List decryption rules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/decryption-rules?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"decryption-rules"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List file blocking profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/file-blocking-profiles?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"file-blocking-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List HTTP header profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/http-header-profiles?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"http-header-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List profile groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/profiles-groups?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"profiles-groups"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List security rules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/security-rules?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"security-rules"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List URL access profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/url-access-profiles?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"url-access-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List vulnerability protection profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/vulnerability-protection-profiles?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"vulnerability-protection-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List vulnerability protection signatures",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/vulnerability-protection-signatures?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"vulnerability-protection-signatures"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List WildFire antivirus profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/wildfire-anti-virus-profiles?folder=Shared",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"wildfire-anti-virus-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Shared"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Configuration Management",
+			"item": [
+				{
+					"name": "Show the candidate configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/config-versions/candidate",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"config-versions",
+								"candidate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List configuration jobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/jobs",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show the running configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/config-versions/running",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"config-versions",
+								"running"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sandbox APIs",
+			"item": [
+				{
+					"name": "List Tenant Service Group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/tenancy/v1/tenant_service_groups",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"tenancy",
+								"v1",
+								"tenant_service_groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remote Networks - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/remote-networks?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"remote-networks"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remote Networks - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MG-PA4\",\n    \"license_type\": \"FWAAS-AGGREGATE\",\n    \"secondary_wan_enabled\": false,\n    \"region\": \"Australia Southeast\",\n    \"ipsec_tunnel\": \"MG-Tunnel_4\",\n    \"spn_name\": \"australia-southeast-coconut\",    \n    \"subnets\": [\n        \"172.16.11.2/32\",\n        \"172.16.90.1/32\"\n    ],\n    \"protocol\": {\n        \"bgp\": {\n            \"enable\": true,\n            \"originate_default_route\": true,\n            \"peer_ip_address\": \"172.16.90.1\",\n            \"peer_as\": \"2\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/remote-networks?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"remote-networks"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remote Networks - Edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MG-PA2b\",\n    \"license_type\": \"FWAAS-AGGREGATE\",\n    \"secondary_wan_enabled\": false,\n    \"region\": \"ap-southeast-2\",\n    \"ipsec_tunnel\": \"MG-Tunnel_2\",\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/remote-networks/{{uuid}}?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"remote-networks",
+								"{{uuid}}"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remote Networks - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/remote-networks/{{uuid}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"remote-networks",
+								"{{uuid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RN IPSec Tunnels - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ipsec-tunnels?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ipsec-tunnels"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RN IPSec Tunnels - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MG-Tunnel_3\",\n    \"auto_key\": {\n        \"ike_gateway\": [\n            {\n                \"name\": \"ike_Gateway_MG3\"\n            }\n        ],\n        \"ipsec_crypto_profile\": \"PaloAlto-Networks-IPSec-Crypto\"\n    },\n    \"anti_replay\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ipsec-tunnels?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ipsec-tunnels"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RN IPSec Tunnels - Edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"MG-Tunnel_3\",\n    \"auto_key\": {\n        \"ike_gateway\": [\n            {\n                \"name\": \"ike_Gateway_MG3\"\n            }\n        ],\n        \"ipsec_crypto_profile\": \"PaloAlto-Networks-IPSec-Crypto\"\n    },\n    \"anti_replay\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ipsec-tunnels/58dafd35-83ba-4783-b5cb-5e052b925f73?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ipsec-tunnels",
+								"58dafd35-83ba-4783-b5cb-5e052b925f73"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RN IPSec Tunnels - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ipsec-tunnels/a48e0a05-b658-4090-a8df-5892d4dffd26?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ipsec-tunnels",
+								"a48e0a05-b658-4090-a8df-5892d4dffd26"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IKE Gateway - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ike-gateways?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ike-gateways"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IKE Gateway - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"ike_Gateway_MG3\",\n    \"authentication_key\": \"paloalto1\",\n    \"peer_address\": {\n        \"dynamic\": {}\n    },\n    \"local_id\": {\n        \"type\": \"ufqdn\",\n        \"id\": \"abc@acme.com\"\n    },\n    \"peer_id\": {\n        \"type\": \"ufqdn\",\n        \"id\": \"abc@acme.com\"\n    },\n    \"protocol\": {\n        \"ikev1\": {\n            \"ike_crypto_profile\": \"PaloAlto-Networks-IKE-Crypto\",\n            \"dpd\": {\n                \"enable\": true\n            }\n        },\n        \"ikev2\": {\n            \"ike_crypto_profile\": \"PaloAlto-Networks-IKE-Crypto\",\n            \"dpd\": {\n                \"enable\": true\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ike-gateways?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ike-gateways"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IKE Gateway - Edit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ike-gateways?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ike-gateways"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IKE Gateway - Delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ike-gateways?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ike-gateways"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IKE Crypto Profile - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ike-crypto-profiles?folder=Remote Networks&name=PaloAlto-Networks-IKE-Crypto",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ike-crypto-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								},
+								{
+									"key": "name",
+									"value": "PaloAlto-Networks-IKE-Crypto"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IKE Crypto Profile - Create",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ike-crypto-profiles?folder=Remote Networks&name=PaloAlto-Networks-IKE-Crypto",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ike-crypto-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								},
+								{
+									"key": "name",
+									"value": "PaloAlto-Networks-IKE-Crypto"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IKE Crypto Profile - Delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/ike-crypto-profiles?folder=Remote Networks&name=PaloAlto-Networks-IKE-Crypto",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"ike-crypto-profiles"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								},
+								{
+									"key": "name",
+									"value": "PaloAlto-Networks-IKE-Crypto"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Applications - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/applications?folder=Remote Networks",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"applications"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Configuration Mgmt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/license-types",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"license-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SPN - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sase.paloaltonetworks.com/config/v1/bandwidth-allocations?folder=Remote Networks&name=australia-southeast",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sase",
+								"paloaltonetworks",
+								"com"
+							],
+							"path": [
+								"config",
+								"v1",
+								"bandwidth-allocations"
+							],
+							"query": [
+								{
+									"key": "folder",
+									"value": "Remote Networks"
+								},
+								{
+									"key": "name",
+									"value": "australia-southeast"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
